@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('your-background-image.jpg') center/cover;
+        }
+
+        header {
+            background: rgba(59, 130, 246, 0.8);
+        }
+
+        main {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .loader {
+            border-top: 4px solid #3498db;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 4px solid transparent;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <title>Remove Employee</title>
+</head>
+
+<body class="bg-gray-200">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-blue-500 p-4 text-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Admin Panel</h1>
+                </div>
+                <nav class="space-x-4">
+                    <a href="table-details.html" class="hover:underline">Table Details</a>
+                    <a href="add-table.html" class="hover:underline">Add Table</a>
+                    <a href="remove-table.html" class="hover:underline">Remove Table</a>
+                    <a href="employee-details.html" class="hover:underline">Employee Details</a>
+                    <a href="add-employee.html" class="hover:underline">Add Employee</a>
+                    <a href="remove-employee.html" class="hover:underline">Remove Employee</a>
+                    <a href="#" class="hover:underline">Menu Details</a>
+                    <a href="#" class="hover:underline">Payment Details</a>
+                    <a href="#" class="hover:underline">Customer Feedbacks</a>
+                    <a href="#" class="hover:underline">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1 p-8">
+            <div class="bg-white p-6 shadow-md rounded-md">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center">
+                    <span class="loader"></span>
+                    Remove Employee
+                </h2>
+                <!-- Employee data section -->
+                <div id="employeeDetails" class="text-gray-500">
+                    <!-- Dynamic employee content will be inserted here -->
+                </div>
+
+                <form id="removeEmployeeForm" class="mt-4" action="del_emp.jsp" method="post">
+                    <label for="employeeIdToRemove" class="block text-sm font-medium text-gray-700">Enter Employee ID to Remove:</label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                        <input type="text" id="employeeIdToRemove" name="emprem" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-300">
+                        <button type="submit" class="ml-2 px-4 py-2 bg-red-500 text-white rounded-md focus:outline-none hover:bg-red-600">Remove</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Script logic likhini aager gulo te lafda korchilo
+        
+    </script>
+</body>
+
+</html>

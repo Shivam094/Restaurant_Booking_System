@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        
+
+        header {
+            background: rgba(59, 130, 246, 0.8);
+        }
+
+        
+        .loader {
+            border-top: 4px solid #3498db;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 4px solid transparent;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <title>Admin Main Page</title>
+</head>
+
+<body bgcolor="#E3E3E3">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-blue-500 p-4 text-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Admin Panel</h1>
+                </div>
+                <nav class="space-x-4">
+                    <a href="table_details.jsp" class="hover:underline">Table Details</a>
+                    <a href="employee_details.jsp" class="hover:underline">Employee Details</a>
+                    <a href="#" class="hover:underline">Menu Details</a>
+                    <a href="#" class="hover:underline">Payment Details</a>
+                    <a href="#" class="hover:underline">Customer Feedbacks</a>
+                    <a href="login.html" class="hover:underline">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1 p-8">
+            <div class="bg-white p-6 shadow-md rounded-md">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="text-2xl font-semibold">Notifications</h2>
+                        <!-- Notification area -->
+                        <div id="notificationArea" class="text-gray-500">No new notifications</div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="loader"></span>
+                        <button onclick="refreshNotifications()" class="ml-4 px-3 py-1 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600">Refresh</button>
+                    </div>
+                </div>
+                <!-- Live date and time -->
+                <div id="liveDateTime" class="text-gray-600 text-sm"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function refreshNotifications() {
+            const notificationArea = document.getElementById('notificationArea');
+            const loader = document.querySelector('.loader');
+
+            
+            loader.style.display = 'inline-block';
+            notificationArea.innerHTML = 'Loading...';
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+
+                
+                const hasNewNotifications = Math.random() > 0.5;
+                notificationArea.innerHTML = hasNewNotifications ? 'New notifications received!' : 'No new notifications';
+            }, 2000); // Simulated 2 seconds delay
+        }
+
+        // Update korar jonne live date and time every second
+        function updateLiveDateTime() {
+            const liveDateTimeElement = document.getElementById('liveDateTime');
+            setInterval(() => {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                const formattedDateTime = now.toLocaleDateString('en-US', options);
+                liveDateTimeElement.textContent = formattedDateTime;
+            }, 1000);
+        }
+
+        // function call
+        updateLiveDateTime();
+    </script>
+</body>
+
+</html>

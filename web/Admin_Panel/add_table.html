@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('your-background-image.jpg') center/cover;
+        }
+
+        header {
+            background: rgba(59, 130, 246, 0.8);
+        }
+
+        main {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .loader {
+            border-top: 4px solid #3498db;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 4px solid transparent;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <title>Add Employee</title>
+</head>
+
+<body class="bg-gray-200">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-blue-500 p-4 text-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Admin Panel</h1>
+                </div>
+                <nav class="space-x-4">
+                    <a href="table-details.html" class="hover:underline">Table Details</a>
+                    <a href="add-table.html" class="hover:underline">Add Table</a>
+                    <a href="remove-table.html" class="hover:underline">Remove Table</a>
+                    <a href="employee_details.jsp" class="hover:underline">Employee Details</a>
+                    <a href="add-employee.html" class="hover:underline">Add Employee</a>
+                    <a href="remove-employee.html" class="hover:underline">Remove Employee</a>
+                    <a href="#" class="hover:underline">Menu Details</a>
+                    <a href="#" class="hover:underline">Payment Details</a>
+                    <a href="#" class="hover:underline">Customer Feedbacks</a>
+                    <a href="#" class="hover:underline">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1 p-8">
+            <div class="bg-white p-6 shadow-md rounded-md">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center">
+                    <span class="loader"></span>
+                    Add Table
+                </h2>
+                <!-- Employee data section -->
+                <div id="employeeDetails" class="text-gray-500">
+                    <!-- Dynamic employee content will be inserted here -->
+                </div>
+
+                <!-- New Employee Entry form -->
+                <form class="mt-4" action="add_table.jsp" method="post">
+                    <label for="tabId" class="block text-sm font-medium text-gray-700">Table ID:</label>
+                    <input type="number" id="tableId" name="tabid" class="mt-1 p-2 border rounded-md w-full" required>
+
+                    <label class="block mt-4 text-sm font-medium text-gray-700">Class:</label>
+                    <input type="radio" id="Platinum" name="class" value="Platinum" required>
+                    <label for="platinum">Platinum</label>
+                    <input type="radio" id="Gold" name="class" value="Gold" required>
+                    <label for="gold">Gold</label>
+                    <input type="radio" id="Silver" name="class" value="Silver" required>
+                    <label for="silver">Silver</label>
+
+                    <label for="seat" class="block mt-4 text-sm font-medium text-gray-700">Seats:</label>
+                    <input type="text" id="seat" name="seat" class="mt-1 p-2 border rounded-md w-full" required>
+                    
+                    <label class="block mt-4 text-sm font-medium text-gray-700">Status:</label>
+                    <input type="radio" id="reserved" name="status" value="Reserved" required>
+                    <label for="reserve">Reserved</label>
+                    <input type="radio" id="free" name="status" value="Free" required>
+                    <label for="free">Free</label>
+
+                    <label for="prize" class="block mt-4 text-sm font-medium text-gray-700">Prize: (INR)</label>
+                    <input type="number" id="prize" name="prize" class="mt-1 p-2 border rounded-md w-full" required>
+                    
+                    
+                    
+                    
+                    <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600">Add</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // eta te problem korche tai tui ektu dekhe nis.
+    </script>
+</body>
+
+</html>
