@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('your-background-image.jpg') center/cover;
+        }
+
+        header {
+            background: rgba(59, 130, 246, 0.8);
+        }
+
+        main {
+            background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+    <title>Add Menu Item</title>
+</head>
+
+<body class="bg-gray-200">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-blue-500 p-4 text-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Admin Panel</h1>
+                </div>
+                <nav class="space-x-4">
+                    <a href="table-details.html" class="hover:underline">Table Details</a>
+                    <a href="employee-details.html" class="hover:underline">Employee Details</a>
+                    <a href="#" class="hover:underline">Menu Details</a>
+                    <a href="#" class="hover:underline">Payment Details</a>
+                    <a href="#" class="hover:underline">Customer Feedbacks</a>
+                    <a href="#" class="hover:underline">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1 p-8">
+            <div class="bg-white p-6 shadow-md rounded-md">
+                <h2 class="text-2xl font-semibold mb-4">Add Menu Item</h2>
+                <!-- Menu item form -->
+                <form id="addMenuItemForm" class="mt-4" action="add-menu.jsp" method="post">
+                    <div class="mb-4">
+                        <label for="menuItemCategory" class="block text-sm font-medium text-gray-700">Type:</label>
+                        <select id="menuItemCategory" name="category" class="mt-1 p-2 border rounded-md w-full" required>
+                            <option value="">Select Category</option>
+                            <option value="Continental">Continental</option>
+                            <option value="Italian">Italian</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="menuItemCode" class="block text-sm font-medium text-gray-700">Item Code:</label>
+                        <input type="text" id="menuItemCode" name="code" class="mt-1 p-2 border rounded-md w-full" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="menuItemCode" class="block text-sm font-medium text-gray-700">Food Name:</label>
+                        <input type="text" id="menuItemCode" name="food" class="mt-1 p-2 border rounded-md w-full" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="menuItemPrice" class="block text-sm font-medium text-gray-700">Price:</label>
+                        <input type="text" id="menuItemPrice" name="price" class="mt-1 p-2 border rounded-md w-full" required>
+                    </div>
+
+                    <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600">Add Menu Item</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    
+</body>
+
+</html>

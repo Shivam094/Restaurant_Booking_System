@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('your-background-image.jpg') center/cover;
+        }
+
+        header {
+            background: rgba(59, 130, 246, 0.8);
+        }
+
+        main {
+            background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+    <title>Remove Menu Item</title>
+</head>
+
+<body class="bg-gray-200">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-blue-500 p-4 text-white">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold">Admin Panel</h1>
+                </div>
+                <nav class="space-x-4">
+                    <a href="table-details.html" class="hover:underline">Table Details</a>
+                    <a href="#" class="hover:underline">Menu Details</a>
+                    <a href="#" class="hover:underline">Payment Details</a>
+                    <a href="#" class="hover:underline">Customer Feedbacks</a>
+                    <a href="#" class="hover:underline">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-1 p-8">
+            <div class="bg-white p-6 shadow-md rounded-md">
+                <h2 class="text-2xl font-semibold mb-4">Remove Menu Item</h2>
+                <!-- Remove menu item form -->
+                <form id="removeMenuItemForm" class="mt-4" action="remove-menu.jsp" method="post" >
+                    <label for="menuItemCodeToRemove" class="block text-sm font-medium text-gray-700">Enter Item Code to Remove:</label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                        <input type="text" id="menuItemCodeToRemove" name="code" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-300">
+                        <button type="submit" class="ml-2 px-4 py-2 bg-red-500 text-white rounded-md focus:outline-none hover:bg-red-600">Remove</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Function to remove menu item
+        function removeMenuItem() {
+            const menuItemCodeToRemove = document.getElementById('menuItemCodeToRemove').value;
+
+            // Validate input
+            if (!menuItemCodeToRemove) {
+                alert('Please enter the item code to remove.');
+                return;
+            }
+
+            // You can proceed with removing the menu item from the database here
+            // For now, we'll just log the value
+            console.log('Item Code to Remove:', menuItemCodeToRemove);
+
+            // Clear form field after removing the menu item
+            document.getElementById('menuItemCodeToRemove').value = '';
+
+            // Optionally, you can show a success message or redirect the user
+            alert('Menu item removed successfully!');
+        }
+    </script>
+</body>
+
+</html>
