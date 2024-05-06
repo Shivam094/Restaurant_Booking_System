@@ -17,6 +17,7 @@
             
             String snm = request.getParameter("full-name");
             String ph_num = request.getParameter("phone-number");
+            String add = request.getParameter("address");
             String email = request.getParameter("email");
             String id = request.getParameter("id-proof");
             String pwd = request.getParameter("password");
@@ -40,16 +41,16 @@
                 con = DriverManager.getConnection(connectionURL,"root","123456789");
                 if(!con.isClosed()){}
                 
-            String str="insert into user_reg values(?,?,?,?,?)";
+            String str="insert into user_reg values(?,?,?,?,?,?)";
             
             PreparedStatement p=con.prepareStatement(str);
             
             p.setString(2, snm);
             p.setString(3, ph_num);
-            p.setString(4, email);
+            p.setString(5, email);
             p.setString(1, id);
-            p.setString(5, hpwd);
-            //p.setString(6, cpwd);
+            p.setString(6, hpwd);
+            p.setString(4, add);
             
             
 

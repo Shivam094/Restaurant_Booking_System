@@ -35,7 +35,7 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-    <title>Add Employee</title>
+    <title>Remove Records</title>
 </head>
 
 <body class="bg-gray-200">
@@ -49,7 +49,7 @@
                     <a href="table-details.html" class="hover:underline">Table Details</a>
                     <a href="add-table.html" class="hover:underline">Add Table</a>
                     <a href="remove-table.html" class="hover:underline">Remove Table</a>
-                    <a href="employee_details.jsp" class="hover:underline">Employee Details</a>
+                    <a href="employee-details.html" class="hover:underline">Employee Details</a>
                     <a href="add-employee.html" class="hover:underline">Add Employee</a>
                     <a href="remove-employee.html" class="hover:underline">Remove Employee</a>
                     <a href="#" class="hover:underline">Menu Details</a>
@@ -64,43 +64,27 @@
             <div class="bg-white p-6 shadow-md rounded-md">
                 <h2 class="text-2xl font-semibold mb-4 flex items-center">
                     <span class="loader"></span>
-                    Update Seats
+                    Remove Payment and Order Details
                 </h2>
                 <!-- Employee data section -->
                 <div id="employeeDetails" class="text-gray-500">
                     <!-- Dynamic employee content will be inserted here -->
                 </div>
 
-                <!-- New Employee Entry form -->
-                <form class="mt-4" action="add_table.jsp" method="post">
-
-                    <label class="block mt-4 text-sm font-medium text-gray-700">Class:</label>
-                    <input type="radio" id="Platinum" name="class" value="Platinum" required>
-                    <label for="platinum">Platinum</label>
-                    <input type="radio" id="Gold" name="class" value="Gold" required>
-                    <label for="gold">Gold</label>
-                    <input type="radio" id="Silver" name="class" value="Silver" required>
-                    <label for="silver">Silver</label>
-
-                    <label for="seat" class="block mt-4 text-sm font-medium text-gray-700">Seats:</label>
-                    <input type="text" id="seat" name="seat" class="mt-1 p-2 border rounded-md w-full" required>
-                    
-                    
-
-                    <label for="prize" class="block mt-4 text-sm font-medium text-gray-700">Prize: (INR)</label>
-                    <input type="number" id="prize" name="prize" class="mt-1 p-2 border rounded-md w-full" required>
-                    
-                    
-                    
-                    
-                    <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600">Add</button>
+                <form id="removeEmployeeForm" class="mt-4" action="del_pay.jsp" method="post">
+                    <label for="employeeIdToRemove" class="block text-sm font-medium text-gray-700">Enter Phone. No of specific order id to Remove record:</label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                        <input type="text" id="employeeIdToRemove" name="emprem" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-300">
+                        <button type="submit" class="ml-2 px-4 py-2 bg-red-500 text-white rounded-md focus:outline-none hover:bg-red-600">Remove</button>
+                    </div>
                 </form>
             </div>
         </main>
     </div>
 
     <script>
-        // eta te problem korche tai tui ektu dekhe nis.
+        // Script logic likhini aager gulo te lafda korchilo
+        
     </script>
 </body>
 

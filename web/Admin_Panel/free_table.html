@@ -64,7 +64,7 @@
             <div class="bg-white p-6 shadow-md rounded-md">
                 <h2 class="text-2xl font-semibold mb-4 flex items-center">
                     <span class="loader"></span>
-                    Free Table
+                    Update table count
                 </h2>
                 <!-- Employee data section -->
                 <div id="employeeDetails" class="text-gray-500">
@@ -72,10 +72,14 @@
                 </div>
 
                 <form id="removeEmployeeForm" class="mt-4" action="free_table.jsp" method="post">
-                    <label class="block text-sm font-medium text-gray-700">Enter Table ID to Free:</label>
+                    <label class="block text-sm font-medium text-gray-700">Enter Table Class to Add:</label>
                     <div class="mt-1 flex rounded-md shadow-sm">
                         <input type="text" id="tableIdToFree" name="tabfree" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-300">
-                        <button type="submit" class="ml-2 px-4 py-2 bg-red-500 text-white rounded-md focus:outline-none hover:bg-red-600">Remove</button>
+                    </div>
+                    <label class="block text-sm font-medium text-gray-700">Enter No of free tables:</label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                        <input type="text" id="tableIdToFree" name="cap" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md sm:text-sm border-gray-300">
+                        <button type="submit" class="ml-2 px-4 py-2 bg-red-500 text-white rounded-md focus:outline-none hover:bg-red-600">Update</button>
                     </div>
                 </form>
             </div>

@@ -62,36 +62,41 @@
 
         <main class="p-4">
             <center>
-                <h1 class="text-2xl font-bold mb-4">Table Details</h1>
+                <h1 class="text-2xl font-bold mb-4">Payment and Order Details</h1>
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200 shadow-md bg-white">
                         <thead class="bg-gray-50">
                             <tr>
                                 <th scope="col"
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Table ID
+                                    Name
                                 </th>
                                 <th scope="col"
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Class
+                                    Phone
                                 </th>
                                 <th scope="col"
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Seats
+                                    Address
                                 </th>
-                                
-                                
-                                
                                 <th scope="col"
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Prize
+                                    Food_Category
                                 </th>
-                                
                                 <th scope="col"
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    No.Of tables left
+                                    Food_Name
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Price
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status
                                 </th>
                                 
+                            </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             <%
@@ -102,7 +107,7 @@
 
                                     try (Connection con = DriverManager.getConnection(jdbcUrl, username, password);
                                             Statement stmt = con.createStatement();
-                                            ResultSet rs = stmt.executeQuery("SELECT * FROM tables")) {
+                                            ResultSet rs = stmt.executeQuery("SELECT * FROM payment")) {
 
                                         while (rs.next()) {
                             %>
@@ -112,7 +117,8 @@
                                 <td class="px-6 py-4 whitespace-nowrap"><%= rs.getString(3) %></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><%= rs.getString(4) %></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><%= rs.getString(5) %></td>
-                                
+                                <td class="px-6 py-4 whitespace-nowrap"><%= rs.getString(6) %></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><%= rs.getString(7) %></td>
                             </tr>
                             <%
                                         }
@@ -132,21 +138,12 @@
         </main>
                         <center>
                         <div class="mb-4">
-                            <a href="delete_table.html">
+                            <a href="del_pay.html">
                     <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                        Delete Table
+                        Delete Records
                     </button>
                             </a>
-                            <a href="add_table.html">
-                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        Update Table
-                    </button>
-                            </a>
-                            <a href="free_table.html">
-                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        Update Table Count
-                    </button>
-                            </a>
+                   
                 </div>
                         </center>
     </div>
